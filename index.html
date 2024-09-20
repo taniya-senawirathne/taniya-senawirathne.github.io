@@ -55,11 +55,11 @@
                 <a href="#contact" class="nav-link">Contact</a>
               </li>
             </ul>
-              <!-- ==== Dark/Light mode button === -->
-    <button id="theme">
-      <i class="bi bi-moon-fill"></i>
-      <i class="bi bi-brightness-high-fill"></i>
-    </button>
+            <!-- ==== Dark/Light mode button === -->
+            <button id="theme">
+              <i class="bi bi-moon-fill"></i>
+              <i class="bi bi-brightness-high-fill"></i>
+            </button>
           </div>
         </div>
       </nav>
@@ -83,7 +83,10 @@
               <div class="social-links mx-auto mx-lg-0">
                 <div class="row">
                   <div class="col-3">
-                    <a href="mailto:taniyasenawirathne@gmail.com" target="_blank">
+                    <a
+                      href="mailto:taniyasenawirathne@gmail.com"
+                      target="_blank"
+                    >
                       <i class="bi bi-envelope-fill"></i>
                     </a>
                   </div>
@@ -140,8 +143,8 @@
               >
                 <h1>ABOUT ME</h1>
                 <p>
-                  A highly quality focused Test Automation Lead,experienced in a
-                  variety of automation and engineering positions. Organized,
+                  A highly quality focused Test Automation Lead, experienced in
+                  a variety of automation and engineering positions. Organized,
                   methodical, and a keen eye for detail results in solid coding
                   and trustworthy automation scripting. Understanding client
                   requirements and communicating the progress of projects are
@@ -155,10 +158,11 @@
                 >
                   <span class="btn rounded-pill bg-accent text-white mx-auto"
                     >Download CV</span
-                  ></a
-                >
+                  >
+                </a>
               </section>
             </div>
+
             <div class="col-12 col-lg-6 d-grid align-content-center">
               <section
                 id="skills_section"
@@ -171,48 +175,20 @@
                   Here are a few technologies I’ve been working with:
                 </p>
                 <div class="row">
-                  <div class="col-6 col-md-4">
-                    <span>HTML & CSS</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Java</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Postman</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>GitHub</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>WebdriverIO</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>JavaScript</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Selenium</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Cucumber</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Mocha</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Appium</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Jira</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Jenkins</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Cypress</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Playwright</span>
-                  </div>
+                  <div class="col-6 col-md-4"><span>HTML & CSS</span></div>
+                  <div class="col-6 col-md-4"><span>Java</span></div>
+                  <div class="col-6 col-md-4"><span>Postman</span></div>
+                  <div class="col-6 col-md-4"><span>GitHub</span></div>
+                  <div class="col-6 col-md-4"><span>WebdriverIO</span></div>
+                  <div class="col-6 col-md-4"><span>JavaScript</span></div>
+                  <div class="col-6 col-md-4"><span>Selenium</span></div>
+                  <div class="col-6 col-md-4"><span>Cucumber</span></div>
+                  <div class="col-6 col-md-4"><span>Mocha</span></div>
+                  <div class="col-6 col-md-4"><span>Appium</span></div>
+                  <div class="col-6 col-md-4"><span>Jira</span></div>
+                  <div class="col-6 col-md-4"><span>Jenkins</span></div>
+                  <div class="col-6 col-md-4"><span>Cypress</span></div>
+                  <div class="col-6 col-md-4"><span>Playwright</span></div>
                   <div class="col-6 col-md-4">
                     <span>Software Development Life Cycle (SDLC)</span>
                   </div>
@@ -245,7 +221,7 @@
                   </p>
                   <p>
                     Taniya does a great job and has an attention to detail. Has
-                    always been a pleasure working with her. Great Job Taniya !
+                    always been a pleasure working with her. Great Job Taniya!
                   </p>
                   <h3>Dushantha Pradeep</h3>
                   <p>Associate Manager - Automation at Virtusa</p>
@@ -271,13 +247,13 @@
               <div class="slide-col">
                 <div class="user-text">
                   <p>
-                    I have worked with Taniya for almost 5 years and she is
-                    dedicated individual with lot of potential. She is really
+                    I have worked with Taniya for almost 5 years and she is a
+                    dedicated individual with a lot of potential. She is really
                     good at team management and she knows how to get the work
                     done successfully. Risk identification and team management
-                    would be the best candidate to describe her. And also she is
-                    very friendly and very easy to work with. Taniya is a person
-                    whom i would definitely love to have in my team.
+                    would be the best candidates to describe her. And also she
+                    is very friendly and very easy to work with. Taniya is a
+                    person whom I would definitely love to have in my team.
                   </p>
                   <h3>Sandaru Wickramarathne</h3>
                   <p>Quality Assurance Specialist</p>
@@ -292,21 +268,21 @@
         const slideContainer = document.getElementById("slide");
         const slides = document.querySelectorAll(".slide-col");
         let currentIndex = 0;
-  
+
         function showSlide(index) {
           slides.forEach((slide, i) => {
             slide.style.display = i === index ? "block" : "none";
           });
         }
-  
+
         function nextSlide() {
           currentIndex = (currentIndex + 1) % slides.length;
           showSlide(currentIndex);
         }
-  
+
         // Show the first slide
         showSlide(currentIndex);
-  
+
         // Automatically change slides every 5 seconds
         setInterval(nextSlide, 5000);
       </script>
@@ -442,9 +418,7 @@
     <footer id="footer">
       <div class="container">
         <div class="row row-cols-1 row-cols-lg-2">
-          <p>
-            &copy; 2024 | Taniya Senawirathne
-          </p>
+          <p>&copy; 2024 | Taniya Senawirathne</p>
 
           <div class="text-center text-lg-end">
             <a href="https://github.com/taniya-senawirathne" target="_blank">
@@ -459,7 +433,5 @@
       </div>
     </footer>
     <!-- ==== End footer ====  -->
-
-  
   </body>
 </html>
