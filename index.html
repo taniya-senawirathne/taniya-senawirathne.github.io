@@ -1,187 +1,329 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Taniya Senawirathne</title>
     <script type="module" crossorigin src="/assets/index.13d89a30.js"></script>
     <link rel="stylesheet" href="/assets/index.2001e479.css" />
-</head>
+  </head>
 
-<body data-bs-spy="scroll" data-bs-target="#toggleMobileMenu" data-bs-offset="0" tabindex="0">
+  <body
+    data-bs-spy="scroll"
+    data-bs-target="#toggleMobileMenu"
+    data-bs-offset="0"
+    tabindex="0"
+  >
     <!-- ==== Header ==== -->
     <header class="sticky-top">
-        <nav class="navbar navbar-expand-lg navbar-light" id="header">
-            <div class="container">
-                <a class="navbar-brand" href="">
-                    <svg viewBox="0 0 137 23" xmlns="http://www.w3.org/2000/svg" fill="currentcolor"></svg>
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggleMobileMenu" aria-controls="toggleMobileMenu" aria-expanded="false" aria-table="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+      <nav class="navbar navbar-expand-lg navbar-light" id="header">
+        <div class="container">
+          <a class="navbar-brand" href="">
+            <svg
+              viewBox="0 0 137 23"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="currentcolor"
+            ></svg>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#toggleMobileMenu"
+            aria-controls="toggleMobileMenu"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-                <div class="collapse navbar-collapse" id="toggleMobileMenu">
-                    <ul class="navbar-nav ms-lg-auto">
-                        <li class="nav-item"><a href="#home" aria-current="page" class="nav-link active">Home</a></li>
-                        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-                        <li class="nav-item"><a href="#testimonial" class="nav-link">Testimonial</a></li>
-                        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-                    </ul>
-                    <button id="theme">
-                        <i class="bi bi-moon-fill"></i>
-                        <i class="bi bi-brightness-high-fill"></i>
-                    </button>
-                </div>
-            </div>
-        </nav>
+          <div class="collapse navbar-collapse" id="toggleMobileMenu">
+            <ul class="navbar-nav ms-lg-auto">
+              <li class="nav-item">
+                <a href="#home" aria-current="page" class="nav-link active"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a href="#about" class="nav-link">About</a>
+              </li>
+              <li class="nav-item">
+                <a href="#testimonial" class="nav-link">Testimonial</a>
+              </li>
+              <li class="nav-item">
+                <a href="#contact" class="nav-link">Contact</a>
+              </li>
+            </ul>
+            <!-- ==== Dark/Light mode button === -->
+            <button id="theme">
+              <i class="bi bi-moon-fill"></i>
+              <i class="bi bi-brightness-high-fill"></i>
+            </button>
+          </div>
+        </div>
+      </nav>
     </header>
     <!-- ==== End Header ==== -->
 
     <!-- ==== Hero ==== -->
     <div id="home">
-        <div class="container">
-            <div class="row">
-                <div class="col-12 col-lg-6 mt-lg-0 d-grid align-content-center">
-                    <section class="text-center text-lg-start" data-aos="zoom-in" data-aos-delay="1000" data-aos-duration="1000">
-                        <p>Hello! 👋 My name is</p>
-                        <h1>TANIYA SENAWIRATHNE</h1>
-                        <p><span id="headline"></span></p>
-                        <div class="social-links mx-auto mx-lg-0">
-                            <div class="row">
-                                <div class="col-3">
-                                    <a href="mailto:taniyasenawirathne@gmail.com" target="_blank">
-                                        <i class="bi bi-envelope-fill"></i>
-                                    </a>
-                                </div>
-                                <div class="col-3">
-                                    <a href="http://www.linkedin.com/in/taniyasen" target="_blank">
-                                        <i class="bi bi-linkedin"></i>
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </section>
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-6 mt-lg-0 d-grid align-content-center">
+            <section
+              class="text-center text-lg-start"
+              data-aos="zoom-in"
+              data-aos-delay="1000"
+              data-aos-duration="1000"
+            >
+              <p>Hello! 👋 My name is</p>
+              <h1>TANIYA SENAWIRATHNE</h1>
+              <p><span id="headline"></span></p>
+              <div class="social-links mx-auto mx-lg-0">
+                <div class="row">
+                  <div class="col-3">
+                    <a
+                      href="mailto:taniyasenawirathne@gmail.com"
+                      target="_blank"
+                    >
+                      <i class="bi bi-envelope-fill"></i>
+                    </a>
+                  </div>
+                  <div class="col-3">
+                    <a
+                      href="http://www.linkedin.com/in/taniyasen"
+                      target="_blank"
+                    >
+                      <i class="bi bi-linkedin"></i>
+                    </a>
+                  </div>
                 </div>
-                <div class="col-12 col-lg-6 d-grid align-content-center">
-                    <div class="img-container" id="img-wrapper" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="2000">
-                        <div id="canvas"></div>
-                        <div class="curtain">
-                            <img src="/assets/taniya.7a91f994.jpg" crossorigin="" data-sampler="simplePlaneTexture" width="450" height="450" />
-                        </div>
-                    </div>
-                </div>
+              </div>
+            </section>
+          </div>
+          <div class="col-12 col-lg-6 d-grid align-content-center">
+            <div
+              class="img-container"
+              id="img-wrapper"
+              data-aos="fade-left"
+              data-aos-duration="1500"
+              data-aos-delay="2000"
+            >
+              <div id="canvas"></div>
+
+              <div class="curtain">
+                <img
+                  src="/assets/taniya.7a91f994.jpg"
+                  crossorigin=""
+                  data-sampler="simplePlaneTexture"
+                  width="450"
+                  height="450"
+                />
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
     <!-- ==== End Hero ==== -->
 
     <main>
-        <!-- ==== About ==== -->
-        <div id="about">
-            <div class="container">
-                <div class="row">
-                    <h1>ABOUT ME</h1>
-                    <p>
-                        A highly quality-focused Test Automation Lead, experienced in a variety of automation and engineering positions. Organized, methodical, and a keen eye for detail results in solid coding and trustworthy automation scripting. Understanding client requirements and communicating the progress of projects are core values in achieving long-lasting business relationships.
-                    </p>
-                    <a href="./assets/Taniya Senawirathne CV.pdf" class="sim-btn btn-hover-new" data-text="Download CV" download>
-                        <span class="btn rounded-pill bg-accent text-white mx-auto">Download CV</span>
-                    </a>
-                </div>
-            </div>
+      <!-- ==== About ==== -->
+      <div id="about">
+        <div class="container">
+          <div class="row">
+            <h1>ABOUT ME</h1>
+            <p>
+              A highly quality focused Test Automation Lead, experienced in a
+              variety of automation and engineering positions. Organized,
+              methodical, and a keen eye for detail results in solid coding and
+              trustworthy automation scripting. Understanding client
+              requirements and communicating the progress of projects are core
+              values in achieving long-lasting business relationships.
+            </p>
+            <a
+              href="./assets/Taniya Senawirathne CV.pdf"
+              class="sim-btn btn-hover-new"
+              data-text="Download CV"
+              download
+            >
+              <span class="btn rounded-pill bg-accent text-white mx-auto"
+                >Download CV</span
+              >
+            </a>
+          </div>
         </div>
-        <!-- ==== end About ==== -->
+      </div>
+      <!-- ==== end About ==== -->
 
-        <!-- ==== Skills === -->
-        <div class="col-12 col-lg-6 d-grid align-content-center">
-            <section id="skills_section" class="mb-5 mb-lg-0" data-aos="fade-left" data-aos-duration="1000">
-                <h1>SKILLS</h1>
-                <p class="col-12">Here are a few technologies I’ve been working with:</p>
-                <div class="row">
-                    <div class="col-6 col-md-4"><span>HTML & CSS</span></div>
-                    <div class="col-6 col-md-4"><span>Java</span></div>
-                    <div class="col-6 col-md-4"><span>Postman</span></div>
-                    <div class="col-6 col-md-4"><span>GitHub</span></div>
-                    <div class="col-6 col-md-4"><span>WebdriverIO</span></div>
-                    <div class="col-6 col-md-4"><span>JavaScript</span></div>
-                    <div class="col-6 col-md-4"><span>Selenium</span></div>
-                    <div class="col-6 col-md-4"><span>Cucumber</span></div>
-                    <div class="col-6 col-md-4"><span>Mocha</span></div>
-                    <div class="col-6 col-md-4"><span>Appium</span></div>
-                    <div class="col-6 col-md-4"><span>Jira</span></div>
-                    <div class="col-6 col-md-4"><span>Jenkins</span></div>
-                    <div class="col-6 col-md-4"><span>Cypress</span></div>
-                    <div class="col-6 col-md-4"><span>Playwright</span></div>
-                    <div class="col-6 col-md-4"><span>Software Development Life Cycle (SDLC)</span></div>
-                    <div class="col-6 col-md-4"><span>Agile & Waterfall Methodologies</span></div>
-                </div>
-            </section>
-        </div>
-
-        <!-- ==== Testimonials === -->
-        <section id="testimonial">
-            <div class="col-12 col-lg-6 d-grid align-content-center">
-                <section id="about_section" class="my-5 my-lg-0" data-aos="fade-right" data-aos-mirror="true" data-aos-duration="1500">
-                    <h1>TESTIMONIALS</h1>
-                    <div class="container">
-                        <div class="testi">
-                            <div class="slide-row" id="slide">
-                                <div class="slide-col">
-                                    <div class="user-text">
-                                        <p>Taniya is amazing at her job! She knows her way around people, she is good with the client partners as well as the internal teams, does whatever it takes to help colleagues and gets things done. When it comes to work experience, Taniya has more experience in Software Testing and Automation Testing (E2E process).</p>
-                                        <p>Taniya does a great job and has an attention to detail. Has always been a pleasure working with her. Great Job Taniya!</p>
-                                        <h3>Dushantha Pradeep</h3>
-                                        <p>Associate Manager - Automation at Virtusa</p>
-                                    </div>
-                                </div>
-                                <div class="slide-col">
-                                    <div class="user-text">
-                                        <p>I have directly worked with Taniya in a security platform project at Virtusa for nearly one year. Taniya is a dedicated, experienced software quality assurance professional with good analytical skills and vast experience in all aspects of QA. And she’s always ready to put all her energy and time to get the job done. She’s also an excellent team player, with high integrity and work ethics. Taniya can make great contributions to a company and help deliver quality software products to the client.</p>
-                                        <h3>Inushi Gunawardena</h3>
-                                        <p>Associate QA - Lead at Axiata Digital Labs</p>
-                                    </div>
-                                </div>
-                                <div class="slide-col">
-                                    <div class="user-text">
-                                        <p>I have worked with Taniya for almost 5 years and she is a dedicated individual with a lot of potential. She is really good at team management and she knows how to get the work done successfully. Risk identification and team management would be the best candidates to describe her. And also she is very friendly and very easy to work with. Taniya is a great asset for any organization!</p>
-                                        <h3>Damith Hettige</h3>
-                                        <p>Assistant Manager - Test Automation at Virtusa</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
+      <!-- ==== Skills === -->
+      <div class="col-12 col-lg-6 d-grid align-content-center">
+        <section
+          id="skills_section"
+          class="mb-5 mb-lg-0"
+          data-aos="fade-left"
+          data-aos-duration="1000"
+        >
+          <h1>SKILLS</h1>
+          <p class="col-12">
+            Here are a few technologies I’ve been working with:
+          </p>
+          <div class="row">
+            <div class="col-6 col-md-4"><span>HTML & CSS</span></div>
+            <div class="col-6 col-md-4"><span>Java</span></div>
+            <div class="col-6 col-md-4"><span>Postman</span></div>
+            <div class="col-6 col-md-4"><span>GitHub</span></div>
+            <div class="col-6 col-md-4"><span>WebdriverIO</span></div>
+            <div class="col-6 col-md-4"><span>JavaScript</span></div>
+            <div class="col-6 col-md-4"><span>Selenium</span></div>
+            <div class="col-6 col-md-4"><span>Cucumber</span></div>
+            <div class="col-6 col-md-4"><span>Mocha</span></div>
+            <div class="col-6 col-md-4"><span>Appium</span></div>
+            <div class="col-6 col-md-4"><span>Jira</span></div>
+            <div class="col-6 col-md-4"><span>Jenkins</span></div>
+            <div class="col-6 col-md-4"><span>Cypress</span></div>
+            <div class="col-6 col-md-4"><span>Playwright</span></div>
+            <div class="col-6 col-md-4">
+              <span>Software Development Life Cycle (SDLC)</span>
             </div>
+            <div class="col-6 col-md-4">
+              <span>Agile & Waterfall Methodologies</span>
+            </div>
+          </div>
         </section>
+      </div>
+      <!-- ==== End Skills === -->
 
-        <!-- ==== Contact ==== -->
-        <div id="contact">
+      <!-- ==== Testimonials === -->
+      <section id="testimonial">
+        <div class="col-12 col-lg-6 d-grid align-content-center">
+          <section
+            id="about_section"
+            class="my-5 my-lg-0"
+            data-aos="fade-right"
+            data-aos-mirror="true"
+            data-aos-duration="1500"
+          >
+            <h1>TESTIMONIALS</h1>
             <div class="container">
-                <h1>CONTACT</h1>
-                <p>
-                    Interested in discussing opportunities, project collaborations, or just want to connect? Feel free to reach out through any of the platforms below!
-                </p>
-                <div class="social-links">
-                    <a href="mailto:taniyasenawirathne@gmail.com" target="_blank">
-                        <i class="bi bi-envelope-fill"></i>
-                    </a>
-                    <a href="http://www.linkedin.com/in/taniyasen" target="_blank">
-                        <i class="bi bi-linkedin"></i>
-                    </a>
+              <div class="testi">
+                <div class="slide-row" id="slide">
+                  <div class="slide-col">
+                    <div class="user-text">
+                      <p>
+                        Taniya is amazing at her job! She knows her way around
+                        people, she is good with the client partners as well as
+                        the internal teams, does whatever it takes to help
+                        colleagues and gets things done. When it comes to work
+                        experience, Taniya has more experience in Software
+                        Testing and Automation Testing (E2E process).
+                      </p>
+                      <p>
+                        Taniya does a great job and has an attention to detail.
+                        Has always been a pleasure working with her. Great Job
+                        Taniya!
+                      </p>
+                      <h3>Dushantha Pradeep</h3>
+                      <p>Associate Manager - Automation at Virtusa</p>
+                    </div>
+                  </div>
+
+                  <div class="slide-col">
+                    <div class="user-text">
+                      <p>
+                        I have worked with Taniya for almost 5 years and she is
+                        a dedicated individual with a lot of potential. She is
+                        really good at team management and she knows how to get
+                        the work done successfully. Risk identification and team
+                        management would be the best candidates to describe her.
+                        And also she is very friendly and very easy to work
+                        with. Taniya is a person whom I would definitely love to
+                        have in my team.
+                      </p>
+                      <h3>Sandaru Wickramarathne</h3>
+                      <p>Quality Assurance Specialist</p>
+                    </div>
+                  </div>
+                  <div class="slide-col">
+                    <div class="user-text">
+                      <p>
+                        I have directly worked with Taniya in a security
+                        platform project at Virtusa for nearly one year. Taniya
+                        is a dedicated, experienced software quality assurance
+                        professional with good analytical skills and vast
+                        experience in all aspects of QA. And she’s always ready
+                        to put all her energy and time to get the job done.
+                        She’s also an excellent team player, with high integrity
+                        and work ethics. Taniya can make great contributions to
+                        a company and help deliver quality software products to
+                        the client.
+                      </p>
+                      <h3>Inushi Gunawardena</h3>
+                      <p>Associate QA - Lead at Axiata Digital Labs</p>
+                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
+          </section>
         </div>
+      </section>
+      <!-- ==== End Testimonials === -->
+
+      <!-- ==== Contact === -->
+      <div id="contact">
+        <div class="container">
+          <h1>CONTACT ME</h1>
+          <p>Accelerate test automation, don't hesitate to contact me.</p>
+          <form
+            id="contact_form"
+            method="POST"
+            action="https://formspree.io/f/xnqkkobp"
+            target="_blank"
+          >
+            <div class="row">
+              <div class="col-12 col-md-6">
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="col-12 col-md-6">
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+              <div class="col-12">
+                <textarea
+                  id="message"
+                  name="message"
+                  placeholder="Your Message"
+                  required
+                ></textarea>
+              </div>
+              <div class="col-12">
+                <button type="submit" id="send_message">Send Message</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <!-- ==== End Contact === -->
     </main>
 
-    <!-- ==== Footer ==== -->
     <footer>
-        <div class="container">
-            <p>© 2024 Taniya Senawirathne. All Rights Reserved.</p>
-        </div>
+      <div class="container">
+        <p>&copy; 2024 Taniya Senawirathne</p>
+      </div>
     </footer>
-
     <script>
       const slideContainer = document.getElementById("slide");
       const slides = document.querySelectorAll(".slide-col");
@@ -204,5 +346,24 @@
       // Automatically change slides every 5 seconds
       setInterval(nextSlide, 5000);
     </script>
-</body>
+     <!-- ==== Start footer ====  -->
+     <footer id="footer">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-lg-2">
+          <p>&copy; 2024 | Taniya Senawirathne</p>
+
+          <div class="text-center text-lg-end">
+            <a href="https://github.com/taniya-senawirathne" target="_blank">
+              <i class="bi bi-github"></i>
+            </a>
+
+            <a href="https://linkedin.com/in/taniyasen" target="_blank">
+              <i class="bi bi-linkedin"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- ==== End footer ====  -->
+  </body>
 </html>
