@@ -291,25 +291,33 @@
       <script>
         const slideContainer = document.getElementById("slide");
         const slides = document.querySelectorAll(".slide-col");
-        let currentIndex = 1;
-  
-        function showSlide(index) {
+        let currentIndex = 0;
+      
+        function showSlides(index) {
           slides.forEach((slide, i) => {
-            slide.style.display = i === index ? "block" : "none";
+            if (i >= index && i < index + 2) {
+              slide.style.display = "block"; // Show two slides
+            } else {
+              slide.style.display = "none";
+            }
           });
         }
-  
+      
         function nextSlide() {
-          currentIndex = (currentIndex + 1) % slides.length;
-          showSlide(currentIndex);
+          currentIndex = (currentIndex + 2) % slides.length;
+          if (currentIndex + 1 >= slides.length) {
+            currentIndex = 0; // Reset index if it goes out of bounds
+          }
+          showSlides(currentIndex);
         }
-  
-        // Show the first slide
-        showSlide(currentIndex);
-  
+      
+        // Show the first two slides
+        showSlides(currentIndex);
+      
         // Automatically change slides every 5 seconds
         setInterval(nextSlide, 5000);
       </script>
+      
       <!-- ==== End Portfolio === -->
 
       <!-- === Contact ====  -->
