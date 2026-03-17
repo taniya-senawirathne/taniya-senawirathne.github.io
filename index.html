@@ -1,473 +1,1108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Taniya Senawirathne</title>
-    <script type="module" crossorigin src="/assets/index.13d89a30.js"></script>
-    <link rel="stylesheet" href="/assets/index.2001e479.css" />
-  </head>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Taniya Senawirathne — Test Automation Lead. Specialized in Selenium, Cypress, Playwright, WebdriverIO and more." />
+  <title>Taniya Senawirathne | Test Automation Lead</title>
 
-  <body
-    data-bs-spy="scroll"
-    data-bs-target="#toggleMobileMenu"
-    data-bs-offset="0"
-    tabindex="0"
-  >
-    <!-- ==== Header ==== -->
-    <header class="sticky-top">
-      <nav class="navbar navbar-expand-lg navbar-light" id="header">
-        <div class="container">
-          <a class="navbar-brand" href="">
-            <svg
-              viewBox="0 0 137 23"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="currentcolor"
-            ></svg>
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#toggleMobileMenu"
-            aria-controls="toggleMobileMenu"
-            aria-expanded="false"
-            aria-table="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,800;1,9..144,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 
-          <div class="collapse navbar-collapse" id="toggleMobileMenu">
-            <ul class="navbar-nav ms-lg-auto">
-              <li class="nav-item">
-                <a href="#home" aria-current="page" class="nav-link active"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="#about" class="nav-link">About</a>
-              </li>
-              <li class="nav-item">
-                <a href="#testimonial" class="nav-link">Testimonial</a>
-              </li>
-              <li class="nav-item">
-                <a href="#contact" class="nav-link">Contact</a>
-              </li>
-            </ul>
-              <!-- ==== Dark/Light mode button === -->
-    <button id="theme">
-      <i class="bi bi-moon-fill"></i>
-      <i class="bi bi-brightness-high-fill"></i>
+  <style>
+    /* ─── CSS Layers (modern cascade management) ─── */
+    @layer reset, base, layout, components, utilities, animations;
+
+    @layer reset {
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+      html { scroll-behavior: smooth; }
+      img, svg { display: block; max-width: 100%; }
+      ul { list-style: none; }
+      a { text-decoration: none; color: inherit; }
+      button { cursor: pointer; border: none; background: none; font: inherit; }
+    }
+
+    @layer base {
+      :root {
+        --clr-bg:        #0b0c10;
+        --clr-surface:   #13151c;
+        --clr-border:    #1e2030;
+        --clr-accent:    #c8f060;
+        --clr-accent2:   #60d0f0;
+        --clr-text:      #e8eaf0;
+        --clr-muted:     #8890aa;
+
+        --font-display: 'Fraunces', Georgia, serif;
+        --font-body:    'DM Sans', sans-serif;
+
+        --radius-sm: 6px;
+        --radius-md: 14px;
+        --radius-lg: 28px;
+
+        --nav-h: 68px;
+        --section-gap: clamp(5rem, 12vw, 10rem);
+        --content-w: min(1120px, 92vw);
+      }
+
+      body {
+        font-family: var(--font-body);
+        font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+        background: var(--clr-bg);
+        color: var(--clr-text);
+        line-height: 1.7;
+        overflow-x: hidden;
+      }
+
+      ::selection { background: var(--clr-accent); color: var(--clr-bg); }
+
+      :focus-visible {
+        outline: 2px solid var(--clr-accent);
+        outline-offset: 4px;
+        border-radius: var(--radius-sm);
+      }
+    }
+
+    /* ─── NAV ─── */
+    @layer layout {
+      nav {
+        position: fixed;
+        inset-block-start: 0;
+        inset-inline: 0;
+        z-index: 100;
+        block-size: var(--nav-h);
+        display: flex;
+        align-items: center;
+        padding-inline: clamp(1.5rem, 5vw, 3rem);
+        justify-content: space-between;
+        backdrop-filter: blur(18px) saturate(180%);
+        -webkit-backdrop-filter: blur(18px) saturate(180%);
+        background: color-mix(in oklch, var(--clr-bg) 75%, transparent);
+        border-bottom: 1px solid var(--clr-border);
+        transition: box-shadow 0.3s;
+      }
+      nav.scrolled { box-shadow: 0 4px 40px #00000060; }
+
+      .nav__logo {
+        font-family: var(--font-display);
+        font-size: 1.15rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        color: var(--clr-accent);
+      }
+
+      .nav__links {
+        display: flex;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav__links a {
+        font-size: 0.875rem;
+        font-weight: 500;
+        color: var(--clr-muted);
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        transition: color 0.2s;
+        position: relative;
+      }
+      .nav__links a::after {
+        content: '';
+        position: absolute;
+        bottom: -3px;
+        left: 0; right: 0;
+        height: 1px;
+        background: var(--clr-accent);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 0.3s cubic-bezier(.25,.8,.25,1);
+      }
+      .nav__links a:hover { color: var(--clr-text); }
+      .nav__links a:hover::after { transform: scaleX(1); }
+
+      .nav__cta {
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        padding: 0.5rem 1.2rem;
+        border: 1px solid var(--clr-accent);
+        border-radius: 100vw;
+        color: var(--clr-accent);
+        transition: background 0.2s, color 0.2s;
+      }
+      .nav__cta:hover { background: var(--clr-accent); color: var(--clr-bg); }
+
+      /* Mobile hamburger */
+      .nav__burger {
+        display: none;
+        flex-direction: column;
+        gap: 5px;
+        padding: 6px;
+      }
+      .nav__burger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--clr-text);
+        border-radius: 2px;
+        transition: transform 0.3s, opacity 0.3s;
+      }
+
+      @media (width < 680px) {
+        .nav__links { display: none; }
+        .nav__burger { display: flex; }
+        nav.menu-open .nav__links {
+          display: flex;
+          flex-direction: column;
+          position: fixed;
+          inset: var(--nav-h) 0 0;
+          background: var(--clr-surface);
+          align-items: center;
+          justify-content: center;
+          gap: 2.5rem;
+        }
+        nav.menu-open .nav__links a { font-size: 1.2rem; }
+      }
+    }
+
+    /* ─── SECTIONS WRAPPER ─── */
+    @layer layout {
+      .wrapper {
+        width: var(--content-w);
+        margin-inline: auto;
+      }
+
+      section {
+        padding-block: var(--section-gap);
+      }
+
+      .section-label {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.75rem;
+        font-weight: 500;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--clr-accent);
+        margin-bottom: 1.2rem;
+      }
+      .section-label::before {
+        content: '';
+        display: block;
+        width: 24px;
+        height: 1px;
+        background: var(--clr-accent);
+      }
+
+      h2 {
+        font-family: var(--font-display);
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 600;
+        line-height: 1.15;
+        margin-bottom: 1.5rem;
+      }
+    }
+
+    /* ─── HERO ─── */
+    @layer components {
+      #home {
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        padding-block-start: var(--nav-h);
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Animated grid background */
+      #home::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(var(--clr-border) 1px, transparent 1px),
+          linear-gradient(90deg, var(--clr-border) 1px, transparent 1px);
+        background-size: 60px 60px;
+        mask-image: radial-gradient(ellipse 80% 70% at 50% 40%, #000 30%, transparent 100%);
+        opacity: 0.4;
+      }
+
+      /* Glow orbs */
+      .hero-orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(80px);
+        pointer-events: none;
+        animation: orb-drift 12s ease-in-out infinite alternate;
+      }
+      .hero-orb:nth-child(1) {
+        width: 500px; height: 500px;
+        background: color-mix(in oklch, var(--clr-accent) 15%, transparent);
+        top: -100px; right: -80px;
+        animation-delay: 0s;
+      }
+      .hero-orb:nth-child(2) {
+        width: 380px; height: 380px;
+        background: color-mix(in oklch, var(--clr-accent2) 12%, transparent);
+        bottom: 0; left: -60px;
+        animation-delay: -4s;
+      }
+
+      .hero__inner {
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        gap: 4rem;
+        width: var(--content-w);
+        padding-block: 4rem;
+      }
+
+      .hero__greeting {
+        font-size: 0.875rem;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--clr-muted);
+        margin-bottom: 0.8rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+      }
+
+      .hero__name {
+        font-family: var(--font-display);
+        font-size: clamp(2.8rem, 6vw, 5.5rem);
+        font-weight: 800;
+        line-height: 1.0;
+        letter-spacing: -0.02em;
+        background: linear-gradient(135deg, var(--clr-text) 40%, var(--clr-muted));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 1rem;
+      }
+
+      .hero__title {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: var(--clr-accent);
+        font-weight: 400;
+        margin-bottom: 1.5rem;
+        font-family: var(--font-display);
+        font-style: italic;
+      }
+
+      .hero__desc {
+        max-width: 52ch;
+        color: var(--clr-muted);
+        margin-bottom: 2.5rem;
+        font-size: 1rem;
+      }
+
+      .hero__actions {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+        align-items: center;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.8rem;
+        background: var(--clr-accent);
+        color: var(--clr-bg);
+        font-weight: 600;
+        font-size: 0.875rem;
+        letter-spacing: 0.04em;
+        border-radius: 100vw;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .btn-primary:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px color-mix(in oklch, var(--clr-accent) 30%, transparent);
+      }
+
+      .btn-ghost {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.8rem 1.8rem;
+        border: 1px solid var(--clr-border);
+        border-radius: 100vw;
+        color: var(--clr-muted);
+        font-size: 0.875rem;
+        transition: border-color 0.2s, color 0.2s;
+      }
+      .btn-ghost:hover { border-color: var(--clr-text); color: var(--clr-text); }
+
+      /* Photo card */
+      .hero__photo-wrap {
+        position: relative;
+        flex-shrink: 0;
+      }
+      .hero__photo-frame {
+        position: relative;
+        width: clamp(200px, 22vw, 300px);
+        aspect-ratio: 3/4;
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        border: 1px solid var(--clr-border);
+      }
+      .hero__photo-frame img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        object-position: top center;
+      }
+      .hero__photo-frame::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to bottom, transparent 60%, var(--clr-bg) 100%);
+      }
+      /* Floating badge */
+      .hero__badge {
+        position: absolute;
+        bottom: -16px;
+        left: -20px;
+        background: var(--clr-surface);
+        border: 1px solid var(--clr-border);
+        border-radius: var(--radius-md);
+        padding: 0.75rem 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        font-size: 0.8rem;
+        backdrop-filter: blur(12px);
+        box-shadow: 0 8px 32px #00000080;
+      }
+      .badge-dot {
+        width: 8px; height: 8px;
+        background: var(--clr-accent);
+        border-radius: 50%;
+        animation: pulse-dot 2s ease-in-out infinite;
+      }
+
+      @media (width < 720px) {
+        .hero__inner {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .hero__greeting, .hero__actions { justify-content: center; }
+        .hero__photo-wrap { order: -1; margin-inline: auto; }
+        .hero__badge { left: 50%; transform: translateX(-50%); white-space: nowrap; }
+        .hero__desc { margin-inline: auto; }
+      }
+    }
+
+    /* ─── ABOUT ─── */
+    @layer components {
+      #about { background: var(--clr-surface); }
+      .about__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: start;
+      }
+
+      .about__text p { color: var(--clr-muted); margin-bottom: 1rem; }
+
+      /* Stats row */
+      .about__stats {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1px;
+        background: var(--clr-border);
+        border-radius: var(--radius-md);
+        overflow: hidden;
+        margin-top: 2rem;
+      }
+      .stat-card {
+        background: var(--clr-bg);
+        padding: 1.4rem 1rem;
+        text-align: center;
+      }
+      .stat-card strong {
+        display: block;
+        font-family: var(--font-display);
+        font-size: 2rem;
+        font-weight: 800;
+        color: var(--clr-accent);
+      }
+      .stat-card span {
+        font-size: 0.78rem;
+        color: var(--clr-muted);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+      }
+
+      /* Skills */
+      .skills__heading {
+        font-family: var(--font-display);
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin-bottom: 1.2rem;
+        color: var(--clr-text);
+      }
+      .skills__grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      /* Skill pill — uses :has() for "featured" pills */
+      .skill-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.45rem 1rem;
+        border-radius: 100vw;
+        font-size: 0.82rem;
+        font-weight: 500;
+        background: var(--clr-bg);
+        border: 1px solid var(--clr-border);
+        color: var(--clr-muted);
+        transition: border-color 0.2s, color 0.2s, background 0.2s;
+        cursor: default;
+      }
+      .skill-pill:hover {
+        border-color: var(--clr-accent);
+        color: var(--clr-accent);
+        background: color-mix(in oklch, var(--clr-accent) 8%, transparent);
+      }
+      .skill-pill.featured {
+        border-color: color-mix(in oklch, var(--clr-accent) 40%, transparent);
+        color: var(--clr-accent);
+        background: color-mix(in oklch, var(--clr-accent) 10%, transparent);
+      }
+
+      @media (width < 720px) {
+        .about__grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      }
+    }
+
+    /* ─── TESTIMONIALS ─── */
+    @layer components {
+      #testimonial { }
+
+      .testimonials__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
+        gap: 1.5rem;
+      }
+
+      /* Using @container queries on testimonial cards */
+      .testimonial-card {
+        container-type: inline-size;
+        background: var(--clr-surface);
+        border: 1px solid var(--clr-border);
+        border-radius: var(--radius-lg);
+        padding: 2rem;
+        position: relative;
+        transition: border-color 0.3s, transform 0.3s;
+      }
+      .testimonial-card:hover {
+        border-color: color-mix(in oklch, var(--clr-accent) 30%, transparent);
+        transform: translateY(-4px);
+      }
+      .testimonial-card::before {
+        content: '\201C';
+        font-family: var(--font-display);
+        font-size: 5rem;
+        line-height: 1;
+        color: var(--clr-accent);
+        opacity: 0.18;
+        position: absolute;
+        top: 1rem;
+        left: 1.5rem;
+      }
+
+      .testimonial-card blockquote {
+        font-size: 0.95rem;
+        color: var(--clr-muted);
+        font-style: italic;
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+        position: relative;
+        z-index: 1;
+      }
+
+      .testimonial-card footer {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .avatar {
+        width: 40px; height: 40px;
+        border-radius: 50%;
+        background: var(--clr-border);
+        display: grid;
+        place-items: center;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 1rem;
+        color: var(--clr-accent);
+        flex-shrink: 0;
+        border: 1px solid color-mix(in oklch, var(--clr-accent) 30%, transparent);
+      }
+
+      .testimonial-card cite {
+        font-style: normal;
+      }
+      .testimonial-card cite strong {
+        display: block;
+        font-size: 0.9rem;
+        color: var(--clr-text);
+      }
+      .testimonial-card cite span {
+        font-size: 0.78rem;
+        color: var(--clr-muted);
+      }
+
+      /* Stars using pure CSS */
+      .stars {
+        display: flex;
+        gap: 3px;
+        margin-bottom: 1rem;
+      }
+      .stars::before { content: '★★★★★'; color: var(--clr-accent); font-size: 0.85rem; letter-spacing: 2px; }
+    }
+
+    /* ─── CONTACT ─── */
+    @layer components {
+      #contact { background: var(--clr-surface); }
+
+      .contact__grid {
+        display: grid;
+        grid-template-columns: 1fr 1.4fr;
+        gap: 4rem;
+        align-items: start;
+      }
+
+      .contact__info {
+        position: relative;
+      }
+
+      .contact__info p {
+        color: var(--clr-muted);
+        margin-bottom: 2rem;
+        max-width: 40ch;
+      }
+
+      .contact__icons {
+        display: flex;
+        flex-direction: row;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 0;
+        margin-top: 0.5rem;
+      }
+
+      .contact-icon-btn {
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: 48px;
+        height: 48px;
+        border-radius: var(--radius-md);
+        border: 1px solid var(--clr-border);
+        background: var(--clr-bg);
+        color: var(--clr-muted);
+        cursor: pointer;
+        transition: color 0.2s, border-color 0.2s, background 0.2s, transform 0.2s;
+        text-decoration: none;
+      }
+      .contact-icon-btn:hover {
+        color: var(--clr-accent);
+        border-color: color-mix(in oklch, var(--clr-accent) 40%, transparent);
+        background: color-mix(in oklch, var(--clr-accent) 8%, transparent);
+        transform: translateY(-3px);
+      }
+
+      /* Tooltip */
+      .contact-icon-btn::after {
+        content: attr(data-tooltip);
+        position: absolute;
+        bottom: calc(100% + 8px);
+        left: 50%;
+        transform: translateX(-50%) translateY(4px);
+        background: var(--clr-surface);
+        border: 1px solid var(--clr-border);
+        color: var(--clr-text);
+        font-size: 0.75rem;
+        white-space: nowrap;
+        padding: 0.35rem 0.7rem;
+        border-radius: var(--radius-sm);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.2s, transform 0.2s;
+        z-index: 10;
+      }
+      .contact-icon-btn:hover::after {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
+
+      /* Form — uses :user-valid / :user-invalid pseudo-classes (modern HTML) */
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+
+      label {
+        font-size: 0.78rem;
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--clr-muted);
+      }
+
+      input, textarea {
+        background: var(--clr-bg);
+        border: 1px solid var(--clr-border);
+        border-radius: var(--radius-md);
+        padding: 0.85rem 1rem;
+        color: var(--clr-text);
+        font: inherit;
+        font-size: 0.95rem;
+        transition: border-color 0.2s, box-shadow 0.2s;
+        outline: none;
+        width: 100%;
+      }
+      input:focus, textarea:focus {
+        border-color: var(--clr-accent);
+        box-shadow: 0 0 0 3px color-mix(in oklch, var(--clr-accent) 15%, transparent);
+      }
+      input:user-valid { border-color: color-mix(in oklch, var(--clr-accent) 50%, transparent); }
+      input:user-invalid { border-color: #f06060; }
+
+      textarea { resize: vertical; min-height: 130px; }
+
+      .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+      .btn-submit {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        padding: 0.9rem 2rem;
+        background: var(--clr-accent);
+        color: var(--clr-bg);
+        font-weight: 600;
+        font-size: 0.9rem;
+        border-radius: 100vw;
+        align-self: flex-start;
+        transition: transform 0.2s, box-shadow 0.2s;
+      }
+      .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px color-mix(in oklch, var(--clr-accent) 30%, transparent);
+      }
+
+      #form-status {
+        font-size: 0.875rem;
+        padding: 0.8rem 1rem;
+        border-radius: var(--radius-md);
+        display: none;
+      }
+      #form-status.success { display: block; background: color-mix(in oklch, var(--clr-accent) 12%, transparent); color: var(--clr-accent); border: 1px solid color-mix(in oklch, var(--clr-accent) 30%, transparent); }
+      #form-status.error   { display: block; background: color-mix(in oklch, #f06060 12%, transparent); color: #f06060; border: 1px solid color-mix(in oklch, #f06060 30%, transparent); }
+
+      @media (width < 720px) {
+        .contact__grid { grid-template-columns: 1fr; }
+        .form-row { grid-template-columns: 1fr; }
+      }
+    }
+
+    /* ─── FOOTER ─── */
+    @layer components {
+      footer {
+        border-top: 1px solid var(--clr-border);
+        padding-block: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-size: 0.8rem;
+        color: var(--clr-muted);
+        flex-wrap: wrap;
+        text-align: center;
+      }
+      footer strong { color: var(--clr-accent); }
+    }
+
+    /* ─── ANIMATIONS ─── */
+    @layer animations {
+      @keyframes orb-drift {
+        from { transform: translate(0, 0) scale(1); }
+        to   { transform: translate(30px, 20px) scale(1.06); }
+      }
+      @keyframes pulse-dot {
+        0%, 100% { box-shadow: 0 0 0 0 color-mix(in oklch, var(--clr-accent) 40%, transparent); }
+        50%       { box-shadow: 0 0 0 6px transparent; }
+      }
+      @keyframes fade-up {
+        from { opacity: 0; transform: translateY(28px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+      @keyframes fade-in {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+      }
+
+      /* Scroll-driven reveal using Intersection Observer (JS) + CSS */
+      [data-reveal] {
+        opacity: 0;
+        transform: translateY(28px);
+        transition: opacity 0.6s cubic-bezier(.25,.8,.25,1), transform 0.6s cubic-bezier(.25,.8,.25,1);
+        will-change: opacity, transform;
+        isolation: isolate;
+        position: relative;
+      }
+      [data-reveal].revealed {
+        opacity: 1;
+        transform: translateY(0);
+        will-change: auto;
+      }
+
+      /* Hero entrance */
+      .hero__greeting  { animation: fade-up 0.7s 0.1s both; }
+      .hero__name      { animation: fade-up 0.7s 0.25s both; }
+      .hero__title     { animation: fade-up 0.7s 0.35s both; }
+      .hero__desc      { animation: fade-up 0.7s 0.45s both; }
+      .hero__actions   { animation: fade-up 0.7s 0.55s both; }
+      .hero__photo-wrap{ animation: fade-in 0.9s 0.3s both; }
+    }
+
+    /* ─── SCROLL-DRIVEN @scroll-timeline (progressive enhancement) ─── */
+    @supports (animation-timeline: scroll()) {
+      .hero__name {
+        animation: fade-up 0.7s 0.25s both;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ═══════════════════ NAV ═══════════════════ -->
+  <nav id="main-nav" role="navigation" aria-label="Main navigation">
+    <a href="#home" class="nav__logo" aria-label="Home">TS.</a>
+    <ul class="nav__links" role="list">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#testimonial">Testimonials</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="assets/Taniya Senawirathne CV.pdf" class="nav__cta" download aria-label="Download CV">Download CV</a>
+    <button class="nav__burger" id="burger-btn" aria-expanded="false" aria-controls="main-nav" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
     </button>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <!-- ==== End Header ==== -->
+  </nav>
 
-    <!-- ==== Hero ==== -->
-    <div id="home">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 col-lg-6 mt-lg-0 d-grid align-content-center">
-            <section
-              class="text-center text-lg-start"
-              data-aos="zoom-in"
-              data-aos-delay="1000"
-              data-aos-duration="1000"
-            >
-              <p>Hello! 👋 My name is</p>
-              <h1>TANIYA SENAWIRATHNE</h1>
-              <p><span id="headline"></span></p>
-              <div class="social-links mx-auto mx-lg-0">
-                <div class="row">
-                  <div class="col-3">
-                    <a href="mailto:taniyasenawirathne@gmail.com" target="_blank">
-                      <i class="bi bi-envelope-fill"></i>
-                    </a>
-                  </div>
-                  <div class="col-3">
-                    <a
-                      href="http://www.linkedin.com/in/taniyasen"
-                      target="_blank"
-                    >
-                      <i class="bi bi-linkedin"></i>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-          <div class="col-12 col-lg-6 d-grid align-content-center">
-            <div
-              class="img-container"
-              id="img-wrapper"
-              data-aos="fade-left"
-              data-aos-duration="1500"
-              data-aos-delay="2000"
-            >
-              <div id="canvas"></div>
+  <main>
 
-              <div class="curtain">
-                <img
-                  src="/assets/taniya.7a91f994.jpg"
-                  crossorigin=""
-                  data-sampler="simplePlaneTexture"
-                  width="450"
-                  height="450"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- ==== End Hero ==== -->
-
-    <main>
-      <!-- ==== About ==== -->
-      <div id="about">
-        <div class="container">
-          <div class="row">
-            <div class="col-12 col-lg-6 d-grid align-content-center">
-              <section
-                id="about_section"
-                class="my-5 my-lg-0"
-                data-aos="fade-right"
-                data-aos-mirror="true"
-                data-aos-duration="1500"
-              >
-                <h1>ABOUT ME</h1>
-                <p>
-                  A highly quality focused Test Automation Lead,experienced in a
-                  variety of automation and engineering positions. Organized,
-                  methodical, and a keen eye for detail results in solid coding
-                  and trustworthy automation scripting. Understanding client
-                  requirements and communicating the progress of projects are
-                  core values in achieving long-lasting business relationships.
-                </p>
-                <a
-                  href="./assets/Taniya Senawirathne CV.pdf"
-                  class="sim-btn btn-hover-new"
-                  data-text="Download CV"
-                  download
-                >
-                  <span class="btn rounded-pill bg-accent text-white mx-auto"
-                    >Download CV</span
-                  ></a
-                >
-              </section>
-            </div>
-            <div class="col-12 col-lg-6 d-grid align-content-center">
-              <section
-                id="skills_section"
-                class="mb-5 mb-lg-0"
-                data-aos="fade-left"
-                data-aos-duration="1000"
-              >
-                <h1>SKILLS</h1>
-                <p class="col-12">
-                  Here are a few technologies I’ve been working with:
-                </p>
-                <div class="row">
-                  <div class="col-6 col-md-4">
-                    <span>HTML & CSS</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Java</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Postman</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>GitHub</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>WebdriverIO</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>JavaScript</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Selenium</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Cucumber</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Mocha</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Appium</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Jira</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Jenkins</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Cypress</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Playwright</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Software Development Life Cycle (SDLC)</span>
-                  </div>
-                  <div class="col-6 col-md-4">
-                    <span>Agile & Waterfall Methodologies</span>
-                  </div>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- ==== end About ==== -->
-
-      <!-- ==== Portfolio === -->
-      <section id="testimonial">
-        <h1>TESTIMONIALS</h1>
-        <div class="container">
-          <div class="testi">
-            <div class="slide-row" id="slide">
-              <div class="slide-col">
-                <div class="user-text">
-                  <p>
-                    Taniya is amazing at her job! She knows her way around
-                    people, she is good with the client partners as well as the
-                    internal teams, does whatever it takes to help colleagues
-                    and gets things done. When it comes to work experience,
-                    Taniya has more experience in Software Testing and
-                    Automation Testing (E2E process).
-                  </p>
-                  <p>
-                    Taniya does a great job and has an attention to detail. Has
-                    always been a pleasure working with her. Great Job Taniya !
-                  </p>
-                  <h3>Dushantha Pradeep</h3>
-                  <p>Associate Manager - Automation at Virtusa</p>
-                </div>
-              </div>
-              <div class="slide-col">
-                <div class="user-text">
-                  <p>
-                    I have directly worked with Taniya in a security platform
-                    project at Virtusa for nearly one year. Taniya is a
-                    dedicated, experienced software quality assurance
-                    professional with good analytical skills and vast experience
-                    in all aspects of QA. And she’s always ready to put all her
-                    energy and time to get the job done. She’s also an excellent
-                    team player, with high integrity and work ethics. Taniya can
-                    make great contributions to a company and help deliver
-                    quality software products to the client.
-                  </p>
-                  <h3>Inushi Gunawardena</h3>
-                  <p>Associate QA - Lead at Axiata Digital Labs</p>
-                </div>
-              </div>
-              <div class="slide-col">
-                <div class="user-text">
-                  <p>
-                    I have worked with Taniya for almost 5 years and she is
-                    dedicated individual with lot of potential. She is really
-                    good at team management and she knows how to get the work
-                    done successfully. Risk identification and team management
-                    would be the best candidate to describe her. And also she is
-                    very friendly and very easy to work with. Taniya is a person
-                    whom i would definitely love to have in my team.
-                  </p>
-                  <h3>Sandaru Wickramarathne</h3>
-                  <p>Quality Assurance Specialist</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <script>
-        const slideContainer = document.getElementById("slide");
-        const slides = document.querySelectorAll(".slide-col");
-        let currentIndex = 0;
-      
-        function showSlides(index) {
-          slides.forEach((slide, i) => {
-            if (i >= index && i < index + 2) {
-              slide.style.display = "block"; // Show two slides
-            } else {
-              slide.style.display = "none";
-            }
-          });
-        }
-      
-        function nextSlide() {
-          currentIndex = (currentIndex + 2) % slides.length;
-          if (currentIndex + 1 >= slides.length) {
-            currentIndex = 0; // Reset index if it goes out of bounds
-          }
-          showSlides(currentIndex);
-        }
-      
-        // Show the first two slides
-        showSlides(currentIndex);
-      
-        // Automatically change slides every 5 seconds
-        setInterval(nextSlide, 5000);
-      </script>
-      
-      <!-- ==== End Portfolio === -->
-
-      <!-- === Contact ====  -->
-      <div id="contact">
-        <section>
-          <div class="container">
-            <h1>CONTACT ME</h1>
-            <div class="row">
-              <div
-                class="hello mb-4 mb-lg-0 col-12 col-lg-4 d-grid align-content-center"
-                data-aos="fade-right"
-                data-aos-duration="1000"
-              >
-                <span>Let's connect</span>
-                <p>Accelerate test automation, don't hesitate to contact me.</p>
-
-                <div class="mt-5 more_info">
-                  <p>
-                    <i class="bi bi-geo-alt text-accent me-2 fs-5"></i>
-                    Sri Lanka
-                  </p>
-
-                  <p>
-                    <i class="bi bi-envelope-fill text-accent me-2 fs-5"></i>
-                    taniyasenawirathne@gmail.com
-                  </p>
-                </div>
-              </div>
-
-              <div
-                class="contact_form col-12 col-lg-8 d-grid align-content-center"
-              >
-                <form
-                  action=""
-                  id="contact_form"
-                  name="portfolio_form"
-                  data-aos="fade-left"
-                  data-aos-duration="1000"
-                >
-                  <div class="row">
-                    <div class="col-12 col-lg-6">
-                      <input
-                        type="text"
-                        name="name"
-                        id="name"
-                        placeholder="Your Name"
-                        class="form-control"
-                        required
-                      />
-                      <div class="invalid-feedback small_label">
-                        Please enter at least 2 character
-                      </div>
-                    </div>
-                    <div class="col-12 col-lg-6 mt-3 mt-lg-0">
-                      <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        placeholder="Your Email"
-                        class="form-control"
-                        required
-                      />
-                      <div class="invalid-feedback small_label">
-                        Please enter a valid email
-                      </div>
-                    </div>
-                    <div class="col-12 col-lg-12 mt-3">
-                      <input
-                        type="text"
-                        name="subject"
-                        id="subject"
-                        placeholder="Subject"
-                        class="form-control"
-                        required
-                      />
-                      <div class="invalid-feedback small_label">
-                        Please enter a subject
-                      </div>
-                    </div>
-                    <div class="col-12 col-lg-12 mt-3">
-                      <textarea
-                        name="message"
-                        id="message"
-                        placeholder="Message"
-                        class="form-control"
-                        rows="5"
-                        maxlength="400"
-                        style="max-height: 300px"
-                        required
-                      ></textarea>
-                      <div class="invalid-feedback small_label">
-                        Please enter more than 5 word
-                      </div>
-                      <div
-                        class="valid-feedback text-end"
-                        style="font-family: sans-serif"
-                      ></div>
-                    </div>
-                    <!-- <div class="mt-3"></div> -->
-                    <div class="col-12 mt-3">
-                      <p class="thanks">Thank you. I will reply soon.</p>
-                    </div>
-                    <div class="mt-3 text-center text-lg-end">
-                      <button
-                        class="btn rounded-pill bg-accent text-white mx-auto"
-                        type="submit"
-                        id="send"
-                        enable
-                      >
-                        Send Message
-                      </button>
-                    </div>
-                    <div
-                      class="spinner-border text-accent mx-auto"
-                      role="status"
-                    >
-                      <span class="visually-hidden">Loading...</span>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </div>
-        </section>
-      </div>
-      <!-- ==== End Contact ====  -->
-    </main>
-
-    <!-- ==== Start footer ====  -->
-    <footer id="footer">
-      <div class="container">
-        <div class="row row-cols-1 row-cols-lg-2">
-          <p>
-            &copy; 2026 | Taniya Senawirathne
+    <!-- ═══════════════════ HERO ═══════════════════ -->
+    <section id="home" aria-label="Hero">
+      <div class="hero-orb"></div>
+      <div class="hero-orb"></div>
+      <div class="hero__inner">
+        <div class="hero__content">
+          <p class="hero__greeting">
+            <span aria-hidden="true">👋</span> Hello, I'm
           </p>
-
-          <div class="text-center text-lg-end">
-            <a href="https://github.com/taniya-senawirathne" target="_blank">
-              <i class="bi bi-github"></i>
+          <h1 class="hero__name">Taniya<br>Senawirathne</h1>
+          <p class="hero__title">Test Automation Lead</p>
+          <p class="hero__desc">
+            A highly quality-focused automation engineer with expertise across the full testing spectrum — from strategic planning to hands-on implementation. Methodical, detail-oriented, and passionate about clean, trustworthy test suites.
+          </p>
+          <div class="hero__actions">
+            <a href="#contact" class="btn-primary">
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              Let's Talk
             </a>
-
-            <a href="https://linkedin.com/in/taniyasen" target="_blank">
-              <i class="bi bi-linkedin"></i>
+            <a href="assets/Taniya Senawirathne CV.pdf" class="btn-ghost" download>
+              <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+              Download CV
             </a>
           </div>
         </div>
-      </div>
-    </footer>
-    <!-- ==== End footer ====  -->
 
-  
-  </body>
+        <div class="hero__photo-wrap">
+          <div class="hero__photo-frame">
+            <img src="https://taniya-senawirathne.github.io/assets/taniya.7a91f994.jpg"
+                 alt="Taniya Senawirathne — Test Automation Lead"
+                 width="300" height="400"
+                 loading="eager"
+                 fetchpriority="high" />
+          </div>
+          <div class="hero__badge" aria-label="Available for opportunities">
+            <span class="badge-dot" aria-hidden="true"></span>
+            Available for opportunities
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ ABOUT ═══════════════════ -->
+    <section id="about" aria-label="About me">
+      <div class="wrapper">
+        <div class="about__grid">
+          <div class="about__text" data-reveal>
+            <p class="section-label">About me</p>
+            <h2>Crafting Quality<br><em style="font-style:italic; color: var(--clr-muted); font-weight:300;">at every layer</em></h2>
+            <p>
+              I'm a Test Automation Lead with broad experience across diverse automation and engineering roles. My organised, methodical approach and keen eye for detail result in solid, trustworthy automation solutions.
+            </p>
+            <p>
+              Understanding client requirements and communicating project progress are core values I bring to every engagement — enabling long-lasting business relationships built on trust.
+            </p>
+
+            <div class="about__stats" role="list" aria-label="Key stats">
+              <div class="stat-card" role="listitem">
+                <strong>5+</strong>
+                <span>Years experience</span>
+              </div>
+              <div class="stat-card" role="listitem">
+                <strong>15+</strong>
+                <span>Tech skills</span>
+              </div>
+              <div class="stat-card" role="listitem">
+                <strong>3</strong>
+                <span>Recommendations</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about__skills" data-reveal style="transition-delay: 0.15s">
+            <p class="skills__heading">Skills &amp; Technologies</p>
+            <div class="skills__grid" role="list" aria-label="Skills">
+              <!-- Featured / core skills -->
+              <span class="skill-pill featured" role="listitem">Selenium</span>
+              <span class="skill-pill featured" role="listitem">Cypress</span>
+              <span class="skill-pill featured" role="listitem">Playwright</span>
+              <span class="skill-pill featured" role="listitem">WebdriverIO</span>
+              <span class="skill-pill featured" role="listitem">Appium</span>
+              <!-- Supporting -->
+              <span class="skill-pill" role="listitem">Java</span>
+              <span class="skill-pill" role="listitem">JavaScript</span>
+              <span class="skill-pill" role="listitem">HTML &amp; CSS</span>
+              <span class="skill-pill" role="listitem">Cucumber</span>
+              <span class="skill-pill" role="listitem">Mocha</span>
+              <span class="skill-pill" role="listitem">Postman</span>
+              <span class="skill-pill" role="listitem">GitHub</span>
+              <span class="skill-pill" role="listitem">Jenkins</span>
+              <span class="skill-pill" role="listitem">Jira</span>
+              <span class="skill-pill" role="listitem">SDLC</span>
+              <span class="skill-pill" role="listitem">Agile</span>
+              <span class="skill-pill" role="listitem">Waterfall</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ TESTIMONIALS ═══════════════════ -->
+    <section id="testimonial" aria-label="Testimonials">
+      <div class="wrapper">
+        <p class="section-label" data-reveal>Testimonials</p>
+        <h2 data-reveal>What colleagues say</h2>
+
+        <div class="testimonials__grid" role="list">
+
+          <article class="testimonial-card" data-reveal role="listitem">
+            <div class="stars" aria-label="5 stars"></div>
+            <blockquote>
+              Taniya is amazing at her job! She knows her way around people, she is good with the client partners as well as the internal teams, does whatever it takes to help colleagues and gets things done. Taniya has outstanding experience in Software Testing and End-to-End Automation. She does a great job and has an attention to detail — always a pleasure working with her.
+            </blockquote>
+            <footer>
+              <div class="avatar" aria-hidden="true">DP</div>
+              <cite>
+                <strong>Dushantha Pradeep</strong>
+                <span>Associate Manager – Automation at Virtusa</span>
+              </cite>
+            </footer>
+          </article>
+
+          <article class="testimonial-card" data-reveal style="transition-delay: 0.12s" role="listitem">
+            <div class="stars" aria-label="5 stars"></div>
+            <blockquote>
+              I have directly worked with Taniya in a security platform project at Virtusa for nearly one year. Taniya is a dedicated, experienced software quality assurance professional with good analytical skills and vast experience in all aspects of QA. She's always ready to put all her energy and time to get the job done and is an excellent team player with high integrity and work ethics.
+            </blockquote>
+            <footer>
+              <div class="avatar" aria-hidden="true">IG</div>
+              <cite>
+                <strong>Inushi Gunawardena</strong>
+                <span>Associate QA Lead at Axiata Digital Labs</span>
+              </cite>
+            </footer>
+          </article>
+
+          <article class="testimonial-card" data-reveal style="transition-delay: 0.24s" role="listitem">
+            <div class="stars" aria-label="5 stars"></div>
+            <blockquote>
+              I have worked with Taniya for almost 5 years and she is a dedicated individual with lots of potential. She is really good at team management and knows how to get the work done successfully. Risk identification and team management are her strongest suits — and she is very friendly and easy to work with. Taniya is a person I would definitely love to have in my team.
+            </blockquote>
+            <footer>
+              <div class="avatar" aria-hidden="true">SW</div>
+              <cite>
+                <strong>Sandaru Wickramarathne</strong>
+                <span>Quality Assurance Specialist</span>
+              </cite>
+            </footer>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════ CONTACT ═══════════════════ -->
+    <section id="contact" aria-label="Contact">
+      <div class="wrapper">
+        <div class="contact__grid">
+          <div class="contact__info" data-reveal>
+            <p class="section-label">Contact</p>
+            <h2>Let's connect</h2>
+            <p>Accelerate test automation — don't hesitate to reach out. I'm always happy to discuss new opportunities, projects, or just a chat about testing!</p>
+
+            <div class="contact__icons" role="list" aria-label="Contact links">
+              <a href="mailto:taniyasenawirathne@gmail.com" class="contact-icon-btn" aria-label="Email" data-tooltip="taniyasenawirathne@gmail.com" role="listitem">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
+              </a>
+              <span class="contact-icon-btn no-link" aria-label="Location: Sri Lanka" data-tooltip="Sri Lanka" role="listitem">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <a href="https://github.com/taniya-senawirathne" class="contact-icon-btn" aria-label="GitHub" data-tooltip="GitHub" target="_blank" rel="noopener noreferrer" role="listitem">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+              <a href="https://www.linkedin.com/in/taniyasen" class="contact-icon-btn" aria-label="LinkedIn" data-tooltip="LinkedIn" target="_blank" rel="noopener noreferrer" role="listitem">
+                <svg width="20" height="20" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact__form" data-reveal style="transition-delay: 0.15s">
+            <!-- Uses native HTML form validation with constraint API -->
+            <form id="contact-form" novalidate aria-label="Contact form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="name">Name</label>
+                  <input type="text" id="name" name="name"
+                         placeholder="Your name"
+                         minlength="2" required
+                         autocomplete="name" />
+                </div>
+                <div class="form-group">
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email"
+                         placeholder="you@example.com"
+                         required
+                         autocomplete="email" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject"
+                       placeholder="What's it about?"
+                       minlength="3" required />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message"
+                          placeholder="Tell me about your project or question…"
+                          minlength="20" required></textarea>
+              </div>
+              <div id="form-status" role="status" aria-live="polite"></div>
+              <button type="submit" class="btn-submit">
+                <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ═══════════════════ FOOTER ═══════════════════ -->
+  <footer>
+    <p>© <time id="year"></time> <strong>Taniya Senawirathne</strong> — All rights reserved.</p>
+  </footer>
+
+  <!-- ═══════════════════ SCRIPTS ═══════════════════ -->
+  <script>
+    // ── Dynamic year ──
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // ── Scroll nav shadow ──
+    const nav = document.getElementById('main-nav');
+    const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ── Mobile burger ──
+    const burger = document.getElementById('burger-btn');
+    burger.addEventListener('click', () => {
+      const open = nav.classList.toggle('menu-open');
+      burger.setAttribute('aria-expanded', String(open));
+    });
+    // Close on nav link click
+    nav.querySelectorAll('.nav__links a').forEach(a =>
+      a.addEventListener('click', () => {
+        nav.classList.remove('menu-open');
+        burger.setAttribute('aria-expanded', 'false');
+      })
+    );
+
+    // ── Intersection Observer scroll reveals ──
+    const reveals = document.querySelectorAll('[data-reveal]');
+    const revealObserver = new IntersectionObserver(
+      entries => entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('revealed');
+          revealObserver.unobserve(e.target);
+        }
+      }),
+      { threshold: 0.12, rootMargin: '0px 0px -40px 0px' }
+    );
+    reveals.forEach(el => revealObserver.observe(el));
+
+    // ── Contact form (Constraint Validation API) ──
+    const form = document.getElementById('contact-form');
+    const status = document.getElementById('form-status');
+
+    form.addEventListener('submit', async e => {
+      e.preventDefault();
+      if (!form.checkValidity()) {
+        form.querySelectorAll(':invalid').forEach(el => el.focus());
+        status.textContent = 'Please fill in all required fields correctly.';
+        status.className = 'error';
+        return;
+      }
+      const btn = form.querySelector('.btn-submit');
+      btn.textContent = 'Sending…';
+      btn.disabled = true;
+      // Simulate send (replace with your backend / Formspree / EmailJS endpoint)
+      await new Promise(r => setTimeout(r, 1200));
+      status.textContent = '✓ Thank you! I will reply soon.';
+      status.className = 'success';
+      form.reset();
+      btn.textContent = 'Send Message';
+      btn.disabled = false;
+    });
+  </script>
+
+</body>
 </html>
