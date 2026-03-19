@@ -286,14 +286,26 @@
         margin-bottom: 1rem;
       }
 
-      .hero__title {
-        font-size: clamp(1rem, 2vw, 1.25rem);
+      .hero__headline {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.4rem 0.6rem;
+        margin-bottom: 1.6rem;
+        animation: fade-up 0.7s 0.35s both;
+        font-size: clamp(0.9rem, 1.6vw, 1.05rem);
+        font-weight: 700;
         color: var(--clr-accent);
-        font-weight: 400;
-        margin-bottom: 1.5rem;
-        font-family: var(--font-display);
-        font-style: italic;
+        letter-spacing: 0.01em;
       }
+      .hero__headline .divider {
+        color: color-mix(in oklch, var(--clr-accent) 35%, transparent);
+        font-weight: 300;
+        font-size: 1.1em;
+        user-select: none;
+      }
+      .hero__headline .hl-ai { color: var(--clr-accent); }
+      .hero__headline .hl-accent { color: var(--clr-accent); }
 
       .hero__desc {
         max-width: 52ch;
@@ -850,7 +862,17 @@
             <span aria-hidden="true">👋</span> Hello, I'm
           </p>
           <h1 class="hero__name">Taniya<br>Senawirathne</h1>
-          <p class="hero__title">Test Automation Lead</p>
+          <p class="hero__headline" aria-label="Specialisations">
+            <span>Automation Testing Lead</span>
+            <span class="divider">|</span>
+            <span class="hl-ai">AI-Driven QA</span>
+            <span class="divider">|</span>
+            <span>Cypress &amp; Playwright</span>
+            <span class="divider">|</span>
+            <span>SDLC Expert</span>
+            <span class="divider">|</span>
+            <span class="hl-accent">Building Scalable, High-Quality Systems</span>
+          </p>
           <p class="hero__desc">
             A highly quality-focused automation engineer with expertise across the full testing spectrum — from strategic planning to hands-on implementation. Methodical, detail-oriented, and passionate about clean, trustworthy test suites.
           </p>
