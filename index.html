@@ -414,15 +414,14 @@
       /* Stats row */
       .about__stats {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 1px;
-        background: var(--clr-border);
-        border-radius: var(--radius-md);
-        overflow: hidden;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
         margin-top: 2rem;
       }
       .stat-card {
         background: var(--clr-bg);
+        border: 1px solid var(--clr-border);
+        border-radius: var(--radius-md);
         padding: 1.4rem 1rem;
         text-align: center;
       }
@@ -448,6 +447,24 @@
         margin-bottom: 1.2rem;
         color: var(--clr-text);
       }
+      .skill-category {
+        margin-bottom: 1.4rem;
+      }
+      .skill-category:last-child { margin-bottom: 0; }
+
+      .skill-cat-label {
+        display: flex;
+        align-items: center;
+        gap: 0.45rem;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--clr-accent);
+        margin-bottom: 0.65rem;
+        opacity: 0.85;
+      }
+
       .skills__grid {
         display: flex;
         flex-wrap: wrap;
@@ -478,6 +495,15 @@
         border-color: color-mix(in oklch, var(--clr-accent) 40%, transparent);
         color: var(--clr-accent);
         background: color-mix(in oklch, var(--clr-accent) 10%, transparent);
+      }
+      .skill-pill.featured-ai {
+        border-color: color-mix(in oklch, var(--clr-accent2) 40%, transparent);
+        color: var(--clr-accent2);
+        background: color-mix(in oklch, var(--clr-accent2) 10%, transparent);
+      }
+      .skill-pill.featured-ai:hover {
+        border-color: var(--clr-accent2);
+        background: color-mix(in oklch, var(--clr-accent2) 16%, transparent);
       }
 
       @media (width < 720px) {
@@ -872,42 +898,105 @@
 
             <div class="about__stats" role="list" aria-label="Key stats">
               <div class="stat-card" role="listitem">
-                <strong>5+</strong>
+                <strong>8+</strong>
                 <span>Years experience</span>
               </div>
               <div class="stat-card" role="listitem">
                 <strong>15+</strong>
                 <span>Tech skills</span>
               </div>
-              <div class="stat-card" role="listitem">
-                <strong>3</strong>
-                <span>Recommendations</span>
-              </div>
             </div>
           </div>
 
           <div class="about__skills" data-reveal style="transition-delay: 0.15s">
             <p class="skills__heading">Skills &amp; Technologies</p>
-            <div class="skills__grid" role="list" aria-label="Skills">
-              <!-- Featured / core skills -->
-              <span class="skill-pill featured" role="listitem">Selenium</span>
-              <span class="skill-pill featured" role="listitem">Cypress</span>
-              <span class="skill-pill featured" role="listitem">Playwright</span>
-              <span class="skill-pill featured" role="listitem">WebdriverIO</span>
-              <span class="skill-pill featured" role="listitem">Appium</span>
-              <!-- Supporting -->
-              <span class="skill-pill" role="listitem">Java</span>
-              <span class="skill-pill" role="listitem">JavaScript</span>
-              <span class="skill-pill" role="listitem">HTML &amp; CSS</span>
-              <span class="skill-pill" role="listitem">Cucumber</span>
-              <span class="skill-pill" role="listitem">Mocha</span>
-              <span class="skill-pill" role="listitem">Postman</span>
-              <span class="skill-pill" role="listitem">GitHub</span>
-              <span class="skill-pill" role="listitem">Jenkins</span>
-              <span class="skill-pill" role="listitem">Jira</span>
-              <span class="skill-pill" role="listitem">SDLC</span>
-              <span class="skill-pill" role="listitem">Agile</span>
-              <span class="skill-pill" role="listitem">Waterfall</span>
+
+            <div class="skill-category">
+              <p class="skill-cat-label">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                Automation Frameworks
+              </p>
+              <div class="skills__grid">
+                <span class="skill-pill featured">Selenium</span>
+                <span class="skill-pill featured">Cypress</span>
+                <span class="skill-pill featured">Playwright</span>
+                <span class="skill-pill featured">WebdriverIO</span>
+                <span class="skill-pill featured">Appium</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <p class="skill-cat-label">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><ellipse cx="12" cy="12" rx="10" ry="4"/><path d="M2 12c0 2.21 4.48 4 10 4s10-1.79 10-4"/><path d="M2 12v6c0 2.21 4.48 4 10 4s10-1.79 10-4v-6"/></svg>
+                Languages &amp; Tools
+              </p>
+              <div class="skills__grid">
+                <span class="skill-pill">Java</span>
+                <span class="skill-pill">JavaScript</span>
+                <span class="skill-pill">TypeScript</span>
+                <span class="skill-pill">HTML &amp; CSS</span>
+                <span class="skill-pill">Cucumber</span>
+                <span class="skill-pill">Mocha</span>
+                <span class="skill-pill">Postman</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <p class="skill-cat-label">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+                DevOps &amp; Process
+              </p>
+              <div class="skills__grid">
+                <span class="skill-pill">GitHub</span>
+                <span class="skill-pill">Jenkins</span>
+                <span class="skill-pill">Jira</span>
+                <span class="skill-pill">SDLC</span>
+                <span class="skill-pill">Agile</span>
+                <span class="skill-pill">Waterfall</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <p class="skill-cat-label">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2a10 10 0 1 0 10 10"/><path d="M12 8v4l3 3"/><circle cx="19" cy="5" r="3"/></svg>
+                AI Testing
+              </p>
+              <div class="skills__grid">
+                <span class="skill-pill featured-ai">AI/ML Testing</span>
+                <span class="skill-pill featured-ai">ML Model Testing</span>
+                <span class="skill-pill featured-ai">Data Validation</span>
+                <span class="skill-pill featured-ai">Bias Testing</span>
+                <span class="skill-pill featured-ai">Prompt Testing</span>
+                <span class="skill-pill featured-ai">LLM Evaluation</span>
+                <span class="skill-pill featured-ai">AI Test Generation</span>
+                <span class="skill-pill featured-ai">ChatGPT</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <p class="skill-cat-label">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                AI-Powered Tools
+              </p>
+              <div class="skills__grid">
+                <span class="skill-pill featured-ai">Applitools</span>
+                <span class="skill-pill featured-ai">GitHub Copilot</span>
+                <span class="skill-pill featured-ai">Cursor</span>
+                <span class="skill-pill featured-ai">Playwright MCP</span>
+              </div>
+            </div>
+
+            <div class="skill-category">
+              <p class="skill-cat-label">
+                <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                Defect &amp; Test Management
+              </p>
+              <div class="skills__grid">
+                <span class="skill-pill">Bugzilla</span>
+                <span class="skill-pill">Zephyr</span>
+                <span class="skill-pill">Jira</span>
+                <span class="skill-pill">TestRail</span>
+              </div>
             </div>
           </div>
         </div>
